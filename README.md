@@ -1,261 +1,207 @@
-Fundamentals of Architecture
+## Software Architecture - Detailed Tutorial
 
-Why Architecture is Required
+### 1. Fundamentals of Architecture
 
-Vertical and Horizontal Scaling
+* Software Architecture defines system structure, components, and their interactions.
+* Goals: Manage complexity, support scalability, maintainability, and performance.
 
-Need for Distributed Systems
+### 2. Why Architecture is Required
 
-CAP Theorem
+* Early design decisions shape the system's scalability, security, and reliability.
+* Modularization enables team collaboration, reuse, and reduces tech debt.
 
-ACID Properties
+### 3. Vertical and Horizontal Scaling
 
-Latency, Throughput, Availability
+* **Vertical Scaling**: Increase machine resources (CPU, RAM).
+* **Horizontal Scaling**: Add more servers to distribute load.
+* Horizontal scaling supports fault tolerance and high availability.
 
-2. High Availability & Replication
+### 4. Need for Distributed Systems
 
-Strong, Weak, and Eventual Consistency
+* Handles high traffic and large-scale data.
+* Enables component independence, fault tolerance, and geo-redundancy.
 
-3. Advanced Data Structures
+### 5. CAP Theorem
 
-LRU Cache
+* **Consistency**: Latest data on every read.
+* **Availability**: Response for every request.
+* **Partition Tolerance**: System withstands network failures.
+* Choose 2 of 3 in any distributed system.
 
-Graph Data Structure
+### 6. ACID Properties
 
-Dig Ikra Algorithm
+* **Atomicity**: All or nothing.
+* **Consistency**: Data integrity.
+* **Isolation**: Transactions don’t interfere.
+* **Durability**: Changes persist after commit.
 
-4. Load Balancers
+### 7. Latency, Throughput, Availability
 
-Round Robin LB
+* **Latency**: Time per request.
+* **Throughput**: Requests processed per second.
+* **Availability**: System uptime percentage.
 
-Layer-4 LB
+### 8. High Availability & Replication
 
-Layer-7 LB
+* Achieved via redundancy, failover, load balancing, and geo-replication.
+* **Replication Types**:
 
-Consistent Hashing LB
+  * Master-Slave
+  * Multi-Master
+  * Synchronous vs Asynchronous
 
-DNS LB
+### 9. Consistency Models
 
-5. Networking and Data Centres
+* **Strong**: Always latest data
+* **Weak**: No guarantee of latest
+* **Eventual**: Becomes consistent over time
 
-OSI Model
+### 10. Advanced Data Structures
 
-Role of DNS Server, NAT Server, Routers, Switches
+* **LRU Cache**: Discards least recently used item.
+* **Graph**: Nodes & edges, used in networks, maps.
+* **Dijkstra Algorithm**: Shortest path in graph.
 
-Spine Leaf Architecture
+### 11. Load Balancers
 
-Layer-2 and Layer-3 Traffic
+* **Round Robin**: Evenly distributes traffic.
+* **Layer-4 LB**: Based on TCP/UDP.
+* **Layer-7 LB**: Based on HTTP headers/content.
+* **Consistent Hashing**: For distributed systems.
+* **DNS LB**: Uses DNS to resolve multiple IPs.
 
-Tunnels and VPNs
+### 12. Networking and Data Centres
 
-6. Cluster Management
+* **OSI Model**: 7-layer model for network communication.
+* Components: DNS Server, NAT, Routers, Switches.
+* **Spine-Leaf Architecture**: Data center topology.
+* **Layer 2/3 Traffic**: Ethernet vs IP routing.
+* **Tunnels & VPNs**: Secure network communication.
 
-Cluster Manager Roles
+### 13. Cluster Management
 
-Global Data Centre Architecture
+* Manages resources, workloads, and health in a cluster.
+* Global architecture spans multiple regions.
 
-7. Microservices Architecture
+### 14. Microservices Architecture
 
-API Gateway
+* **API Gateway**: Entry point for services.
+* **REST API**: Communication between services.
+* **Scaling**: Deploy multiple instances.
+* **Security**: Auth, rate-limiting, logging.
 
-REST API
+### 15. Security in Microservices
 
-Microservices Scaling
+* **API Rate Limiting**: User, concurrency, location-based, etc.
+* **OAuth**: Authorization standard with Auth Server and Resource Server.
 
-Security and Best Practices
+### 16. Deployment Types
 
-8. Security in Microservices
+* **Master-Slave**
+* **Master-Master**
+* **Single Master**
+* **Tape Backup** (for long-term storage)
 
-API Rate Limiters: User, Concurrency, Location, Server, Priority, Drop Low Priority, Leaky Bucket, Token, Fixed/Sliding Window
+### 17. Virtualization & Containerization
 
-OAuth (Auth Server, Authorization, Resource Server)
+* **Virtual Machines**: Full OS per instance.
+* **Docker**: Lightweight containerized apps.
+* **Kubernetes**: Container orchestration.
 
-9. Deployment Types
+### 18. Disaster Recovery & Business Continuity
 
-Master-Slave, Master-Master, Tape Backup, Single Master
+* Redundant deployments, backups, automated failover.
+* Active-active, active-passive strategies.
 
-10. Virtualization & Containerization
+### 19. Cluster Architecture
 
-Virtual Machines
+* **GFS**: Google File System.
+* **Hadoop + MapReduce**: Batch processing.
+* **Spark**: In-memory big data processing.
+* **Kubernetes**: Scalable deployment.
 
-Docker Containers
+### 20. Architectural Patterns
 
-Kubernetes
+* Client-Server, Proxy (Forward, Reverse), Layered, MVC
+* SaaS, PaaS, IaaS
+* Broker, Leader Election, Hybrid, Edge, CDN
 
-11. Disaster Recovery & Business Continuity
+### 21. Consistent Hashing in Depth
 
-Strategies for High Availability and Resilience
+* Used in cache, load balancing, and traffic routing.
+* Helps reduce rebalancing when nodes change.
 
-12. Cluster Architecture
+### 22. Cloud Technologies
 
-Basics of Cluster Architecture
+* **AWS EC2**: Virtual machines.
+* **AWS CloudWatch**: Monitoring, logs.
+* **AWS Firewall**: Security configurations.
 
-GFS
+### 23. Event-Driven Architecture
 
-Hadoop Cluster, MapReduce
+* **Kafka**: Pub-Sub model.
+* **Observer Pattern**: Reactive design.
+* Kafka scaling with partitions, consumer groups.
 
-Apache Spark
+### 24. Performance Tuning (25 Techniques)
 
-Kubernetes for Cloud Deployment
+* Multithreading, async IO, caching, batching, pooling, DB indexing, etc.
 
-13. Common Architectural Patterns
+### 25. Database Types & Design
 
-Client-Server
+* SQL (Relational)
+* NoSQL (Cassandra, MongoDB)
+* Graph DB, Elastic DB
+* Redis vs Memcache
+* Read Speed: Memory > SSD > HDD
 
-Forward Proxy
+### 26. Security Architecture
 
-Reverse Proxy
+* Firewall, OAuth, WAF, TLS
+* ZTNA, API Security, DoS Prevention
+* Network vs App-Level Security, SASE
 
-Layered Architecture
+### 27. Comparative Trade-offs
 
-MVC
+* Strong vs Eventual Consistency
+* CAP vs ACID
+* LB Types
+* Rate Limiters
+* Deployment: Master-Master vs Master-Slave
+* Hot vs Warm Standby
+* VM vs Docker
+* Hadoop vs Spark
+* SaaS vs PaaS vs IaaS
 
-SaaS, PaaS, IaaS
+### 28. Framework-based Design Thinking
 
-Broker Architecture
+* Use structured frameworks for problem-solving and decision making.
 
-Leader Election
+### 29. Soft Skills for Architects
 
-Consistent Hashing
+* Effective Communication
+* Emotional Intelligence
+* Conflict Resolution
+* Persuasion Techniques
 
-Distributed Cache
+### 30. Capacity Planning
 
-High Availability
+* Decide RAM, CPU, Disk based on load, throughput, and latency goals.
 
-Agent-Based
+### 31. System Design Case Studies
 
-Hybrid Architecture
+* **WhatsApp**: Real-time messaging, encryption, delivery acknowledgements.
+* **Netflix**: CDN, microservices, failover, personalization.
+* **Google Search**: Crawling, indexing, ranking, caching.
+* **Google Maps**: Graph, tile serving, route calculation, geo data.
 
-Web-Based Architecture
+### 32. Mock Interviews & Practice
 
-Edge Device Architecture
+* Simulate interviews, whiteboard challenges, tradeoff discussions.
 
-CDN
+### 33. Miscellaneous Topics
 
-14. Consistent Hashing in Depth
+* Pick from: Cyber Security, Data Center Design, Proprietary Frameworks, etc.
 
-Applications in Cache, LB, Traffic Delegation
 
-15. Cloud Technologies
-
-AWS EC2, Firewall Security
-
-AWS Cloud Watch
-
-16. Event Driven Architecture
-
-Kafka Producer/Consumer
-
-Observer Design Pattern
-
-Kafka Concepts: Consumer Group, Partition, Scaling, Durability
-
-17. Performance Tuning Techniques (25 Techniques)
-
-Design-level optimizations e.g. Multithreading, Caching
-
-18. Database Types & Design
-
-SQL
-
-NoSQL: Cassandra, MongoDB, GraphDB
-
-Elastic DB
-
-CAP Theorem & ACID Properties
-
-Read Speed: Memory, SSD, HDD
-
-Caches: Memcache vs Redis
-
-19. Security Architecture
-
-Firewall
-
-OAuth
-
-WAF
-
-TLS
-
-Network vs Application-Level Security
-
-ZTNA
-
-Endpoint Security
-
-API Rate Limiting
-
-DOS Prevention
-
-SASE
-
-20. Comparative Trade-offs
-
-Strong vs Eventual Consistency
-
-CAP vs ACID
-
-LB Types: Round Robin vs Least Time, Layer 4 vs 7
-
-Rate Limiters
-
-Deployment: Master-Slave vs Master-Master
-
-Hot vs Warm Standby
-
-VM vs Docker
-
-Hadoop vs Spark
-
-Proxy: Forward vs Reverse
-
-SaaS vs IaaS vs PaaS
-
-21. Framework-based Design Thinking
-
-Proprietary analysis and problem-solving frameworks
-
-22. Soft Skills for Architects
-
-Communication
-
-Emotional Intelligence
-
-Positive Persuasion
-
-23. Capacity Planning
-
-Hardware, RAM, Disk Decisions
-
-24. System Design Case Study 1
-
-WhatsApp Architecture
-
-25. System Design Case Study 2
-
-Netflix Architecture
-
-26. System Design Case Study 3
-
-Google Search Architecture
-
-27. System Design Case Study 4
-
-Google Maps Architecture
-
-28. Mock Interviews
-
-29. Miscellaneous Topics (Pick 1 per batch)
-
-
-25 Performance Design Techniques
-
-Data Centre Networking
-
-Cyber Security Coverage
-
-Proprietary Design Frameworks
-
-B
 
